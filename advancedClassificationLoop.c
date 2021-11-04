@@ -2,7 +2,7 @@
 #include <math.h>
 #include "NumClass.h"
 
-int isPalindrome(int num){
+int is_Palindrome(int num){
     int rev_num =0;
     int ans= num;
     while (num > 0){
@@ -13,7 +13,7 @@ int isPalindrome(int num){
      else{return 0; }
      
 }
-int isArmstrong(int num){
+int is_Armstrong(int num){
    int ans=0;
    int temp=0;
    int n = 0;
