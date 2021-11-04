@@ -4,7 +4,7 @@
 
 
 int rev_num (int num, int rev);
-int is_Palindrome(int num){
+int isPalindrome(int num){
     int reverse= rev_num(num, 0);
     if(reverse == num){
         return 1; 
@@ -20,7 +20,7 @@ int rev_num (int num, int rev){
 
 int order(int x);
 int power(int x, unsigned int y);
-int is_Armstrong(int num ){
+int isArmstrong(int num ){
     int n = order(num);
     int temp = num, sum = 0;
     while (temp!=0) {
