@@ -3,7 +3,7 @@ OBJECT_LOOP: basicClassification.o advancedClassificationficationLoop.o
 
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 
-loop: libclassloops.a 
+loops: libclassloops.a 
 libclassloops.a: main.c libclassloops.a 
 	ar -rcs libclassloops.a $(OBJECT_LOOP)
 
@@ -14,7 +14,6 @@ libclassrec.a: main.c libclassrec.a
 recursived: libclassrec.so
 libclassrec.so: main.c libclassrec.so
 	ar -rcs libclassrec.so $(OBJECT_RECURSION)
-
 
 loopd: libclassloops.so
 libclassloops.so: main.c libclassloops.so 
@@ -28,7 +27,6 @@ maindloop:main.c libclassloops.so
 
 maindrec: main.c libclassrec.so
 	gcc -shared -Wall -o maindrec main.c libclassrec.so
-
 
 clean:
 	rm -f *.o *.a *.so loops recursives loopd recursived mains maindloop maindrec
