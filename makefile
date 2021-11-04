@@ -19,14 +19,14 @@ loopd: libclassloops.so
 libclassloops.so: main.c libclassloops.so 
 	ar -rcs libclassloops.so $(OBJECT_LOOP)
 
-mains: main.c libclassrec.a
+mains: main.o libclassrec.a
 	gcc -shared -Wall -o mains main.c libclassrec.a
 
-maindloop:main.c libclassloops.so
-	gcc -shared -Wall -o maindloop main.c libclassloops.so
+maindloop:main.o libclassloops.so
+	gcc -shared -Wall -o maindloop main.o libclassloops.so
 
-maindrec: main.c libclassrec.so
-	gcc -shared -Wall -o maindrec main.c libclassrec.so
+maindrec: main.o libclassrec.so
+	gcc -shared -Wall -o maindrec main.o libclassrec.so
 
 clean:
 	rm -f *.o *.a *.so loops recursives loopd recursived mains maindloop maindrec
