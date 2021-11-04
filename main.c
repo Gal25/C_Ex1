@@ -2,7 +2,8 @@
 #include <math.h>
 #include "NumClass.h"
 #include "basicClassification.c"
-#include "advancedClassificationRerursion"
+#include "advancedClassificationRerursion.c"
+#include "advancedClassificationLoop.c"
 
 void main(){
 
