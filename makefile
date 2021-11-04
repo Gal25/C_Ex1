@@ -3,7 +3,7 @@ OBJECT_LOOP: basicClassification.o advancedClassificationficationLoop.o
 
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 
-loop: libclassloops.a 
+loops: libclassloops.a 
 libclassloops.a: main.c libclassloops.a 
 	ar -rcs libclassloops.a $(OBJECT_LOOP)
 
