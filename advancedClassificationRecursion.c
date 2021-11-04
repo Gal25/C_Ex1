@@ -2,6 +2,22 @@
 #include <math.h>
 #include "NumClass.h"
 
+
+int rev_num (int num, int rev);
+int isPalindrome(int num){
+    int reverse= rev_num(num, 0);
+    if(reverse == num){
+        return 1; 
+    }
+    return 0;
+}
+
+int rev_num (int num, int rev){
+    if(num==0){return rev;}
+    rev= rev*10 + num%10;
+    return rev_num(num/10, rev);
+}
+
 int order(int x);
 int power(int x, unsigned int y);
 int isArmstrong(int num ){
@@ -36,17 +52,3 @@ int order(int x){
     return n;
 }
 
-int rev_num (int num, int rev);
-int isPalindrome(int num){
-    int reverse= rev_num(num, 0);
-    if(reverse == num){
-        return 1; 
-    }
-    return 0;
-}
-
-int rev_num (int num, int rev){
-    if(num==0){return rev;}
-    rev= rev*10 + num%10;
-    return rev_num(num/10, rev);
-}
