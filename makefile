@@ -20,22 +20,24 @@ libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	$(CC) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) -Wall -c basicClassification.c -lm
+	$(CC) $(FLAGS) -c basicClassification.c
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	$(CC) -Wall -c advancedClassificationLoop.c -lm
+	$(CC) $(FLAGS) -c advancedClassificationLoop.c
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	$(CC) -Wall -c advancedClassificationRecursion.c -lm
+	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
 
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a $(LM)
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so $(LM)
+	$(CC) $(FLAGS) -o maindloop main.o libclassloops.so $(LM)
 maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so $(LM)
+	$(CC) $(FLAGS) -o maindrec main.o libclassrec.so $(LM)
 
 main.o: main.c NumClass.h
-	$(CC) -Wall -c main.c -lm
+	$(CC) $(FLAGS) -c main.c
+
+.PHONY: clean all
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
