@@ -5,18 +5,17 @@ LM = -lm
 
 all: libclassloops.a libclassrec.a libclassrec.so libclassloops.so mains maindloop maindrec
 
-loopd:libclassloops.so 
-recursived:libclassrec.so
-recursives:libclassrec.a
-loops:libclassloops.a 
 
-
+loops:libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
 	$(AR) -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
+recursives:libclassrec.a
 libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$(AR) -rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
+loopd:libclassloops.so 
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	$(CC) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+recursived:libclassrec.so
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	$(CC) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
