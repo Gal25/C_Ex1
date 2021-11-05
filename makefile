@@ -27,13 +27,13 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	gcc -Wall -c advancedClassificationRecursion.c -lm
 
 mains: main.o libclassrec.a
-	gcc -shared -Wall -o mains main.o libclassrec.a
+	gcc -shared -Wall -o mains main.o libclassrec.a -lm
 
 maindloop:main.o libclassloops.so
-	gcc -shared -Wall -o maindloop main.o libclassloops.so
+	gcc -shared -Wall -o maindloop main.o libclassloops.so -lm
 
 maindrec: main.o libclassrec.so
-	gcc -shared -Wall -o maindrec main.o libclassrec.so
+	gcc -shared -Wall -o maindrec main.o libclassrec.so -lm
 	
 
 
