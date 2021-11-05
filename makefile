@@ -14,10 +14,10 @@ libclassrec.a: basicClassification.o advancedClassificationRecursion.o
 	$(AR) -rcs libclassrec.a basicClassification.o advancedClassificationRecursion.o
 loopd:libclassloops.so 
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
-	$(CC) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+	ar -rcs libclassloops.so basicClassification.o advancedClassificationLoop.o
 recursived:libclassrec.so
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
-	$(CC) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
+	ar -rcs libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 basicClassification.o: basicClassification.c NumClass.h
 	$(CC) $(FLAGS) -c basicClassification.c
