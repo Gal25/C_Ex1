@@ -19,8 +19,6 @@ loopd: libclassloops.so
 libclassloops.so: main.c NumClass.h libclassloops.so 
 	ar -rcs libclassloops.so $(OBJECT_LOOP)
 	
-main.o: main.c NumClass.h
-	gcc -Wall -c main.o -lm	
 basicClassification.o: basicClassification.c NumClass.h
 	gcc -Wall -c basicClassification.c -lm
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
