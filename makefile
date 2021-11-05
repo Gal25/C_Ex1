@@ -27,16 +27,16 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
-
 mains: main.o libclassrec.a
-	$(CC) $(FLAGS) -o mains main.o ./libclassrec.a $(LM)
+	$(CC) -Wall -o mains main.o ./libclassrec.a $(LM)
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so $(LM)
+	$(CC) -Wall -o maindloop main.o ./libclassloops.so $(LM)
 maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so $(LM)
+	$(CC) -Wall -o maindrec main.o ./libclassrec.so $(LM)
 
 main.o: main.c NumClass.h
-	$(CC) $(FLAGS) -c main.c
+	$(CC) -Wall -c main.c $(LM)
+
 
 .PHONY: clean all
 
