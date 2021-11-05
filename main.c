@@ -3,7 +3,7 @@
 #include "NumClass.h"
 
 
-void main(){
+int main(){
 
      int num1,num2;
      printf("Please enter number 1: ");
@@ -50,6 +50,8 @@ void main(){
      }
     printf("\n");
     printf("\n");
+     
+     return 0;
 
      
  }
