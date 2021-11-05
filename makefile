@@ -20,11 +20,11 @@ libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	ar -rcs libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 basicClassification.o: basicClassification.c NumClass.h
-	$(CC) $(FLAGS) -c basicClassification.c
+	$(CC) -Wall -c basicClassification.c -lm
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationLoop.c
+	$(CC) -Wall -c advancedClassificationLoop.c -lm
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+	$(CC) -Wall -c advancedClassificationRecursion.c -lm
 
 
 mains: main.o libclassrec.a
