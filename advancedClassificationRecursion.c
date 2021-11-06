@@ -16,8 +16,8 @@ int rev_num (int num, int rev){
     return rev_num(num/10, rev);
 }
 
-int NumOfDigit(int x);
-int ArmHelper(int x, int y);
+int NumOfDigit(int num);
+int ArmHelper(int num, int NumDigit);
 int isArmstrong(int num ){
     int n = NumOfDigit(num);
     int ans = num;
