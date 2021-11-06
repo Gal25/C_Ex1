@@ -1,9 +1,9 @@
 CC=gcc
 AR=ar
-FLAGS= -g -Wall
+FLAGS= -Wall -g 
 LM = -lm
 
-all:loopd loops recursived recursives maindloop maindrec main
+all:loopd loops recursived recursives maindloop maindrec mains
 
 loopd:libclassloops.so 
 recursived:libclassrec.so
