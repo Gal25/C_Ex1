@@ -12,7 +12,7 @@ recursived:libclassrec.so
 
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a $(LM)
-maindloop:main.o libclassloops.so
+maindloop: main.o libclassloops.so
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
 maindrec: main.o libclassrec.so
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so $(LM)
