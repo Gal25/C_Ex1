@@ -8,28 +8,28 @@ int main() {
     scanf("%d", &end);
     printf("The Armstrong numbers are:");
     for(i = start; i <= end; i++ ){
-        if(isArmstrong(i) == TRUE){
+        if(isArmstrong(i)){
             printf(" %d", i);
         }
     }
     printf("\n");
     printf("The Palindromes are:");
     for(i = start; i <= end; i++ ){
-        if(isPalindrome(i) == TRUE){
+        if(isPalindrome(i)){
             printf(" %d", i);
         }
     }
     printf("\n");
     printf("The Prime numbers are:");
     for(i = start; i <= end; i++ ){
-        if(isPrime(i) == TRUE){
+        if(isPrime(i)){
             printf(" %d", i);
         }
     }
     printf("\n");
     printf("The Strong numbers are:");
     for(i = start; i <= end; i++ ){
-        if(isStrong(i) == TRUE){
+        if(isStrong(i)){
             printf(" %d", i);
         }
     }
