@@ -17,13 +17,13 @@ int rev_num (int num, int rev){
 }
 
 int order(int x);
-int power(int x, unsigned int y);
+int ArmHelper(int x, unsigned int y);
 int isArmstrong(int num ){
     int n = order(num);
     int temp = num, sum = 0;
     while (temp!=0) {
         int r = temp % 10;
-        sum += power(r, n);
+        sum += ArmHelper(r, n);
         temp = temp / 10;
     }
  
@@ -32,12 +32,12 @@ int isArmstrong(int num ){
     else
         return 0;
 }
-int power(int x, unsigned int y){
+int ArmHelper(int x, unsigned int y){
     if (y == 0)
         return 1;
     if (y % 2 == 0)
-        return power(x, y / 2) * power(x, y / 2);
-    return x * power(x, y / 2) * power(x, y / 2);
+        return ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
+    return x * ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
 }
  
 int order(int x){
