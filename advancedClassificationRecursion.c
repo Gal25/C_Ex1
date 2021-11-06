@@ -32,7 +32,7 @@ int isArmstrong(int num ){
     else
         return 0;
 }
-int ArmHelper(int x, unsigned int y){
+int ArmHelper(int x, int y){
     if (y == 0)
         return 1;
     if (y % 2 == 0)
