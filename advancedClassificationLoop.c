@@ -9,9 +9,10 @@ int isPalindrome(int num){
      if (reverseNum == num){return 1;}
      else{return 0; }
 }
+
 int isArmstrong(int num){
    int ans=0;
-   int temp=0;
+   int k=0;
    int n = 0;
    int sum = 0;
    
@@ -19,12 +20,11 @@ int isArmstrong(int num){
        ans /= 10;
    }
 
-   for (ans= num; ans != 0; ans /= 10) {
-       temp=ans % 10;
-      sum += pow(temp, n);
+   for (ans= num; ans != 0; ans= ans/10) {
+       k=ans % 10;
+      sum += pow(k, n);
    }
-
-  
    if (sum == num){return 1;}
-else{return 0;}
+   else{return 0;}
 }
+
