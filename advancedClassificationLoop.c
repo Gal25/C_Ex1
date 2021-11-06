@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-int is_Palindrome(int num){
+int isPalindrome(int num){
     int rev_num =0;
     int ans= num;
     while (num > 0){
@@ -12,7 +12,7 @@ int is_Palindrome(int num){
      else{return 0; }
      
 }
-int is_Armstrong(int num){
+int isArmstrong(int num){
    int ans=0;
    int temp=0;
    int n = 0;
