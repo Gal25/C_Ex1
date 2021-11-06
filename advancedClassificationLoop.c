@@ -2,15 +2,13 @@
 #include <math.h>
 
 int isPalindrome(int num){
-    int rev_num =0;
+    int reverseNum =0;
     int ans= num;
-    while (num > 0){
-        rev_num = rev_num*10 + num%10;
-        num= num/10;
+     for (int ans= num; ans > 0; ans=ans/10){
+        reverseNum = reverseNum*10 + ans%10;
     }
-     if (rev_num == ans){return 1;}
+     if (reverseNum == num){return 1;}
      else{return 0; }
-     
 }
 int isArmstrong(int num){
    int ans=0;
