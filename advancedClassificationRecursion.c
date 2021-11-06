@@ -17,7 +17,7 @@ int rev_num (int num, int rev){
 }
 
 int order(int x);
-int ArmHelper(int x, unsigned int y);
+int ArmHelper(int x, int y);
 int isArmstrong(int num ){
     int n = order(num);
     int temp = num, sum = 0;
