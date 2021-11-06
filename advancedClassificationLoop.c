@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include "NumClass.h"
 
 int is_Palindrome(int num){
     int rev_num =0;
