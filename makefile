@@ -1,7 +1,6 @@
 CC=gcc
 AR=ar
 FLAGS= -Wall -g 
-LM = -lm
 
 all:loopd loops recursived recursives maindrec mains maindloop
 
@@ -11,11 +10,11 @@ recursives: libclassrec.a
 recursived: libclassrec.so
 
 mains: main.o libclassrec.a
-	$(CC) $(FLAGS) -o mains main.o libclassrec.a $(LM)
+	$(CC) $(FLAGS) -o mains main.o libclassrec.a -lm
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so $(LM)
+	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
 maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so $(LM)
+	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
 
 	
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
@@ -36,8 +35,6 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
-
-.PHONY: clean all
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec
