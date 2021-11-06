@@ -14,14 +14,12 @@ int isPrime(int num){
 int facturial(int i);
 int isStrong(int num){
     int sum=0;
-    int ans=num;
-    int fact=1;
-    while (num != 0){
-        fact= facturial(num%10);
+    int fact;
+    for (int ans=num; ans != 0; ans=ans/10){
+        fact= facturial(ans%10);
         sum= sum+fact;
-        num=num/10;
     }
-    if(sum==ans){return 1;}
+    if(sum==num){return 1;}
 
 return 0;
 
