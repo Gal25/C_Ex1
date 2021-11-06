@@ -28,14 +28,14 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
 
 mains: main.o libclassrec.a
-	$(CC) -Wall -o mains main.o ./libclassrec.a $(LM)
+	$(CC) -g -Wall -o mains main.o ./libclassrec.a $(LM)
 maindloop: main.o libclassloops.so
-	$(CC) -Wall -o maindloop main.o ./libclassloops.so $(LM)
+	$(CC) -g -Wall -o maindloop main.o ./libclassloops.so $(LM)
 maindrec: main.o libclassrec.so
-	$(CC) -Wall -o maindrec main.o ./libclassrec.so $(LM)
+	$(CC) -g -Wall -o maindrec main.o ./libclassrec.so $(LM)
 
 main.o: main.c NumClass.h
-	$(CC) -Wall -c main.c $(LM)
+	$(CC) -g -Wall -c main.c $(LM)
 
 
 .PHONY: clean all
