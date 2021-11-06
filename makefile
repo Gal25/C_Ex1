@@ -28,13 +28,14 @@ libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	$(CC) -shared basicClassification.o advancedClassificationRecursion.o -o libclassrec.so
 
 main.o: main.c NumClass.h
-	$(CC) $(FLAGS) -c main.c
-basicClassification.o: basicClassification.c NumClass.h
+	$(CC) $(FLAGS) -c main.c basicClassification.c advancedClassificationLoop.c advancedClassificationRecursion.c
+basicClassification.o: basicClassification.c 
 	$(CC) $(FLAGS) -c basicClassification.c
-advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
+advancedClassificationLoop.o: advancedClassificationLoop.c
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
-advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
+advancedClassificationRecursion.o: advancedClassificationRecursion.c
 	$(CC) $(FLAGS) -c advancedClassificationRecursion.c
+
 
 .PHONY: clean all
 
