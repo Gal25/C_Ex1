@@ -35,8 +35,8 @@ int isArmstrong(int num ){
 int ArmHelper(int x, int y){
     if (y == 0)
         return 1;
-    if (y % 2 == 0)
-        return ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
+//     if (y % 2 == 0)
+//         return ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
     return x * ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
 }
  
