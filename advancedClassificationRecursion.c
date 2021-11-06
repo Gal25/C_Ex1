@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include "NumClass.h"
-
 
 int rev_num (int num, int rev);
 int isPalindrome(int num){
