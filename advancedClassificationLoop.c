@@ -3,7 +3,6 @@
 
 int isPalindrome(int num){
     int reverseNum =0;
-    int ans= num;
      for (int ans= num; ans > 0; ans=ans/10){
         reverseNum = reverseNum*10 + ans%10;
     }
