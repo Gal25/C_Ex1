@@ -16,15 +16,15 @@ int rev_num (int num, int rev){
     return rev_num(num/10, rev);
 }
 
-int order(int x);
+int NumOfDigit(int x);
 int ArmHelper(int x, int y);
 int isArmstrong(int num ){
-    int n = order(num);
-    int temp = num, sum = 0;
-    while (temp!=0) {
-        int r = temp % 10;
-        sum += ArmHelper(r, n);
-        temp = temp / 10;
+    int n = NumOfDigit(num);
+    int ans = num;
+    int sum = 0;
+    while (ans != 0) {
+        sum += ArmHelper(ans%10, n);
+        ans = ans / 10;
     }
  
     if (sum == num)
@@ -32,20 +32,17 @@ int isArmstrong(int num ){
     else
         return 0;
 }
-int ArmHelper(int x, int y){
-    if (y == 0)
-        return 1;
-    if (y % 2 == 0)
-        return ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
-    return x * ArmHelper(x, y / 2) * ArmHelper(x, y / 2);
+int ArmHelper(int num, int NumDigit){
+    if (NumDigit == 0){return 1;}
+    if (NumDigit%2 == 0){
+        return ArmHelper(num, NumDigit / 2) * ArmHelper(num, NumDigit / 2);}
+    return (num * ArmHelper(num, NumDigit / 2) * ArmHelper(num, NumDigit / 2));
 }
  
-int order(int x){
+int NumOfDigit(int num){
     int n = 0;
-    while (x!=0) {
-        x = x / 10;
-        n++;
-       
-    }
+   for (int ans = num; ans != 0; ++n) {
+       ans /= 10;
+   }
     return n;
 }
