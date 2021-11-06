@@ -16,31 +16,31 @@ int rev_num (int num, int rev){
     return rev_num(num/10, rev);
 }
 
-int order(int x);
-int power(int x, unsigned int y);
-int isArmstrong(int num ){
-    int n = order(num);
-    int temp = num, sum = 0;
+int NumOfdigit(int x);
+int pow(int x, unsigned int y);
+int isArmstrong(int n){
+    int k = NumOfdigit(n);
+    int temp = n, sum = 0;
     while (temp!=0) {
         int r = temp % 10;
-        sum += power(r, n);
+        sum += pow(r, k);
         temp = temp / 10;
     }
  
-    if (sum == num)
+    if (sum == n)
         return 1;
     else
         return 0;
 }
-int power(int x, unsigned int y){
+int pow(int x, int y){
     if (y == 0)
         return 1;
     if (y % 2 == 0)
-        return power(x, y / 2) * power(x, y / 2);
-    return x * power(x, y / 2) * power(x, y / 2);
+        return pow(x, y / 2) * pow(x, y / 2);
+    return x * pow(x, y / 2) * pow(x, y / 2);
 }
  
-int order(int x){
+int NumOfdigit(int x){
     int n = 0;
     while (x!=0) {
         x = x / 10;
@@ -49,4 +49,3 @@ int order(int x){
     }
     return n;
 }
-
