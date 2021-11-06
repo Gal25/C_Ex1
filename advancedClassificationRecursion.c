@@ -32,7 +32,7 @@ int isArmstrong(int n){
     else
         return 0;
 }
-int pow(int x, int y){
+int pow(int x, unsigned int y){
     if (y == 0)
         return 1;
     if (y % 2 == 0)
