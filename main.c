@@ -6,7 +6,7 @@
 int main(){
 
    int num1,num2;
-     printf("Please enter 2 numbers: ");
+     //printf("Please enter 2 numbers: ");
      scanf("%d %d",&num1 , &num2);
          
         if (num2 < num1){
